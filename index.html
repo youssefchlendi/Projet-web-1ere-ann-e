@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Systeme de gestion de notes</title>
+  <link rel="icon" href="logo.jpg">
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+  <div id="total1">
+    <div class="top">
+      Systeme de gestion
+    </div>
+    <div class="main">
+      <div>
+        <select id="s" class="sel">
+          <option selected>par nom</option>
+          <option>par classe</option>
+        </select>
+        <input id="seach" class="inp" type="text" placeholder="Entrer le nom d'etudiant" />
+        <button id="qstnMark" onclick="seach()">Q</button>
+        <input id="addTmplFile" type="button" value="Ajouter etudiant" onclick="addTmplFile()" />
+        <input id="addTmplFilem" type="button" value="Ajouter module" onclick="addTmplFilem()" />
+        <input id="showmods" type="button" value="afficher les modules" onclick="showmods()" />
+        <input class="refrech" type="button" value="Log-out" onclick="refrech()" />
+      </div>
+      <div>
+        <table id="table1" cellspacing="0px">
+        </div>
+        </table>
+      </div>
+      <div id="lowerLbl" align="center">
+        <p>Total</p>
+        <p id="rowsNum">0</p>
+        <p>Etudiant</p>
+        <select id="sel" onclick="pagination()">
+          <option id="opt0" value="10">10E/page</option>
+          <option id="opt1" value="20">20E/page</option>
+          <option id="opt2" value="50">50E/page</option>
+        </select>
+        &nbsp;
+        <button onclick="last()"> < </button>
+            <button id="pno" style="background-color: #5899ce; color: white">1</button>
+            <button onclick="next()">></button>
+            &nbsp;
+            <p>Aller vers</p>
+            <input type="text" id="gopg" onclick="gopage()" />
+            <p>Page</p>
+      </div>
+    </div>
+  </div>
+  <div id="total2">
+    <div class="top">
+      Systeme de gestion de notes
+      <p style="display: inline; color: #999999"> > Ajout etudiant </p>
+    </div>
+    <div class="main" align="center">
+      <table id="table2" cellspacing="18px">
+      </table>
+    </div>
+  </div>
+  <div id="total3">
+    <div class="top">
+      Systeme de gestion de notes
+      <p style="display: inline; color: #999999"> > Ajout Module </p>
+    </div>
+    <div class="main" align="center">
+      <table id="table3" cellspacing="18px">
+        <tr class="table2Tr">
+          <td class="table2Td1" align="right">Nom De module</td>
+          <td class="table2Td2"><input id="namem" type="text" placeholder="Nom" /></td>
+          <td class="table2Td1" align="right">
+            <p>*</p>Coeficient module
+          </td>
+          <td class="table2Td2"><input id="coff" type="number" placeholder="**" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input id="submitm1" style="height: 35px; width: 80px;" type="button" value="Ajouter" onclick="submitm1()" /></td>
+          <td><input id="submitm2" style="height: 35px; width: 80px; display: none" type="button" value="Modifer" onclick="submitm2()" /></td>
+          <td><input id="cancelm" style="height: 35px; width: 80px; " type="button" value="annuler" onclick="cancelm()" /></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="total4">
+    <div class="top">
+      Systeme de gestion
+    </div>
+    <div class="main">
+      <div>
+        <select id="sm" class="sel">
+          <option selected>par nom</option>
+          <option>par classe</option>
+          <option>par moyenne</option>
+        </select>
+        <input id="seachm" class="inp" type="text" placeholder="Entrer le nom d'etudiant" />
+        <button id="qstnMarkm" onclick="seachm()">Q</button>
+        <input id="addTmplFile1" type="button" value="Ajouter etudiant" onclick="addTmplFile()" />
+        <input id="addTmplFilem1" type="button" value="Ajouter module" onclick="addTmplFilem()" />
+        <input id="showstud" type="button" value="afficher les etudiants" onclick="showstud()" />
+        <input class="refrech" type="button" value="Log-Out" onclick="refrech()" />
+      </div>
+      <div>
+        <table id="table1m" cellspacing="0px">
+          <tr class="tableTitle" align="center">
+            <td class="col1">Nom Et prenom </td>
+            <td class="col1">coef</td>
+            <td class="col1">actions</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div id="total5">
+    <div class="top">
+      Systeme de gestion
+    </div>
+    <div class="main">
+
+    </div>
+  </div>
+  <div class="login">
+    <h1>Login</h1>
+    <input type="text" name="u" id="idlogin" placeholder="Username" required />
+    <input type="password" id="pass" name="p" placeholder="Password" required />
+    <p style="color:white;font-weight:bold;">Not signed ? <button class="btn btn-primary" type="button" id="signup" name="sign" onclick="showsign()">SignUp</button></p>
+    <div id="error"></div>
+    <button type="button" class="btn btn-primary btn-block btn-large" onclick="verify(this)">Let me in.</button>
+
+  </div>
+  <div class="SignUp">
+    <h1>SignUp</h1>
+    <input type="text" name="u" id="idlogin" placeholder="Username" required />
+    <input type="password" id="pass" name="p" placeholder="Password" required />
+
+    <button type="button" class="btn btn-primary btn-block btn-large" onclick="register(this)">Register.</button>
+
+  </div>
+  
+  <script src="admin.js" type="text/javascript"></script>
+  <script src="etudient.js" type="text/javascript"></script>
+  <script src="modules.js" type="text/javascript"></script>
+
+</body>
+
+</html>
